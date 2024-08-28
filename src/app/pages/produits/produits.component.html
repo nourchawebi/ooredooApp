@@ -19,14 +19,17 @@
 
               <div class="blog grid-modern" >
                 <div class="blog-image">
-                  <a [routerLink]="['/acceuil/produit', u.idProduit]"><img class="img-fluid" src="/assets/FrontOffice/img/blog/blog-14.jpg" alt></a>
+                  <a [routerLink]="['/acceuil/produit', u.idProduit]">
+
+
+                    <img class="img-fluid responsive-image" [src]="'http://localhost:8082/image/' + u.picture" alt></a>
                 </div>
                 <div class="blog-modern-box">
-                  <h3 class="blog-title"><a href="blog-details.html">{{u.libelle }}</a></h3>
+                  <h3 class="blog-title">{{u.libelle }}</h3>
                   <div class="blog-info clearfix mb-0">
                     <div class="post-left">
                       <ul>
-                        <li><img class="img-fluid" src="/assets/FrontOffice/img/icon/icon-22.svg" alt>Créer a :{{u.creationDate}}</li>
+                        <li><img class="img-fluid" src="/assets/FrontOffice/img/icon/icon-22.svg" alt>Créer a : {{ u.creationDate | date:'yyyy-MM-dd HH' }}</li>
                         <li><img class="img-fluid" src="/assets/FrontOffice/img/icon/icon-24.svg" alt>marque:{{u.marque}}</li>
                       </ul>
                     </div>

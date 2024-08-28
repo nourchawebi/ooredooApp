@@ -4,6 +4,7 @@ import {ProductService} from "../../services/product.service";
 import {Router} from "@angular/router";
 import Swal from 'sweetalert2';
 import {Produit} from "../../models/produits";
+import {ImageModel} from "../../models/imageModel";
 @Component({
   selector: 'app-ajoutreclamation',
   templateUrl: './ajoutproduit.component.html',
@@ -14,7 +15,10 @@ export class AjoutproduitComponent {
   produit: Produit = new Produit();
   message: string = '';
   error: string = '';
+  imageModel: ImageModel = new ImageModel();
 
+  imageToUpload: File | null = null;
+  imageUrl: string | ArrayBuffer | null = null;
   constructor(
     private fb: FormBuilder,
     private produitService: ProductService,
@@ -29,15 +33,33 @@ export class AjoutproduitComponent {
       marque: ['', Validators.required],
       etat: [0, Validators.required],
       livraisonGratuite: [0, Validators.required],
-      creationDate: [new Date()]
+      creationDate: [new Date()],
+      picture: ['', Validators.required],
     });
   }
+  private previewImage(file: File): void {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imageUrl = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
 
+  onFileSelected(event: any): void {
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      this.imageToUpload = fileList[0];
+      this.imageModel= event.target?.files[0];
+      this.previewImage(this.imageToUpload); // Call the previewImage method
+    }
+  }
   onSubmit(): void {
-    if (this.produitForm.valid) {
+
+    if (this.produitForm.valid  && this.imageToUpload) {
       this.produit = this.produitForm.value;
  console.log(this.produit)
-      this.produitService.createProduit(this.produit).subscribe({
+      this.produitService.createProduit(this.produit,this.imageModel).subscribe({
         next: () => {
           this.error = '';
           this.message = 'Produit ajouté avec succès';

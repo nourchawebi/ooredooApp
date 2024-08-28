@@ -33,13 +33,13 @@
 
 
     <div class="col-md-6">
-      <img class="img-fluid" src="/assets/FrontOffice/img/blog/blog-14.jpg" alt="project-image" class="rounded" style="height: 500px;min-width: 100%" >
+      <img class="img-fluid" [src]="'http://localhost:8082/image/' + produit.picture" alt="project-image" class="rounded"  >
 
       <div class="blog-info clearfix">
         <div class="post-left">
           <ul>
 
-            <li><img class="img-fluid" src="assets/FrontOffice/img/icon/icon-22.svg" alt> créer a :{{produit.creationDate}}</li>
+            <li><img class="img-fluid" src="assets/FrontOffice/img/icon/icon-22.svg" alt> créer a : {{ produit.creationDate | date:'yyyy-MM-dd HH' }}</li>
             <li><img class="img-fluid" src="assets/FrontOffice/img/icon/icon-23.svg" alt>marque: {{produit.marque}}</li>
           </ul>
         </div>

@@ -89,6 +89,17 @@
         </mat-form-field>
       </div>
       </div>
+      <div class="input-block" >
+        <label class="add-course-label" for="picture" style=" color: #392c7c">Choose image</label>
+        <input type="file" class="form-control" id="picture"  name="picture"(change)="onFileSelected($event)"
+               formControlName="picture"   accept="image/*">
+        <img *ngIf="imageUrl" [src]="imageUrl" class="image-preview" />
+        <mat-error *ngIf="produitForm.get('picture')?.errors && produitForm.get('picture')?.touched" class="p-error"> Picture
+          <strong>required</strong>
+        </mat-error>
+
+      </div>
+
       <button type="submit" pButton label="Ajouter" [disabled]="!produitForm.valid">Ajouter</button>
     </form>
   </div>
