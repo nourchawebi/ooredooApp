@@ -1,0 +1,108 @@
+.claim-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color: #f8f9fa; /* Light grey background */
+  border-radius: 8px;
+}
+
+.claim-item {
+  margin-bottom: 20px;
+}
+
+.instructor-detail {
+  margin-bottom: 10px;
+}
+
+.instructor-detail h5 a {
+  text-decoration: none;
+  color: #333; /* Link color */
+}
+
+.rev-info {
+  margin-bottom: 10px;
+}
+
+.btn-reply {
+  background-color: #dc3545; /* Red color for delete button */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc; /* Horizontal line style */
+  margin: 10px 0;
+}
+
+
+.content {
+
+    display: grid;
+    grid-template-columns: 100% 20% ;
+    gap: 10px;
+
+    padding: 10px;
+
+}
+
+.content > div {
+  padding: 20px 0;
+
+}
+
+.imgcontent img {
+  margin-right: 0; /* Remove margin on the right */
+}
+.rev-info {
+  max-width: 500px; /* Set your desired max width */
+  word-wrap: break-word; /* Ensure long words break and wrap properly */
+}
+.containerfiltersearch{
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+  width: 120%;
+}
+
+
+
+.card.search-widget {
+  width: auto;
+  min-width: 300px;
+
+}
+
+
+.mat-paginator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+header {
+  min-width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #d00707;
+  color: white;
+  max-height: 120px;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+header  h1{
+  color: white;
+
+}

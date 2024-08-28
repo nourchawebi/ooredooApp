@@ -1,0 +1,54 @@
+<header>
+  <h1>Details du produit</h1>
+  <nav>
+    <a href="#">Acceuil</a> / <a href="#">Produits/Details</a>
+  </nav>
+  <br>
+</header>
+<br>
+<div class="container-xxl flex-grow-1 container-p-y">
+
+
+
+
+<div class="containersa">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="blog-title"><a href="blog-details.html"> {{produit?.libelle}}</a></h3>
+      <div class="blog-content">
+        {{produit.description}}
+      </div>
+      <p><b style=" color: #392c7c">prixHC:</b> {{produit.prixHC}}</p>
+      <p><strong style=" color: #392c7c">prixHT:</strong> {{produit.prixHT}}</p>
+      <p><strong style=" color: #392c7c">TVA:</strong> {{produit.tva}}</p>
+      <p><strong style=" color: #392c7c">marque:</strong> {{produit.arque}}</p>
+      <p><strong style=" color: #392c7c">livraisonGratuite:</strong> {{produit.livraisonGratuite}}</p>
+      <p><b style=" color: #392c7c">etat:</b> {{produit.etat}}</p>
+    </div>
+
+
+
+
+
+
+    <div class="col-md-6">
+      <img class="img-fluid" src="/assets/FrontOffice/img/blog/blog-14.jpg" alt="project-image" class="rounded" style="height: 500px;min-width: 100%" >
+
+      <div class="blog-info clearfix">
+        <div class="post-left">
+          <ul>
+
+            <li><img class="img-fluid" src="assets/FrontOffice/img/icon/icon-22.svg" alt> créer a :{{produit.creationDate}}</li>
+            <li><img class="img-fluid" src="assets/FrontOffice/img/icon/icon-23.svg" alt>marque: {{produit.marque}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+

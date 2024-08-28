@@ -1,0 +1,101 @@
+<div style="min-width: 500px">
+<h2 mat-dialog-title>Modifier Produit</h2>
+<div mat-dialog-content>
+  <form [formGroup]="produitForm" (ngSubmit)="onSubmit()">
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      <div class="error-message">{{ error }}</div>
+    </div>
+
+
+
+
+
+    <div>
+      <mat-form-field class="custom-input-width">
+        <mat-label>Libellé</mat-label>
+        <input matInput formControlName="libelle" placeholder="Entrer le libellé">
+
+        <mat-error *ngIf="produitForm.get('libelle')?.errors?.['required']&& produitForm.get('libelle')?.touched">Le libellé est requis</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="custom-input-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Entrer la description"></textarea>
+        <mat-error *ngIf="produitForm.get('description')?.errors?.['required']&& produitForm.get('description')?.touched">La description est requise</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="custom-input-width">
+          <mat-label>Prix Hors Charges (HC)</mat-label>
+          <input type="number" matInput formControlName="prixHC" placeholder="Entrer le prix HC">
+          <mat-error *ngIf="produitForm.get('prixHC')?.errors?.['required']&& produitForm.get('prixHC')?.touched">Le prix HC est requis</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="custom-input-width">
+          <mat-label>Prix Hors Taxes (HT)</mat-label>
+          <input type="number" matInput formControlName="prixHT" placeholder="Entrer le prix HT">
+          <mat-error *ngIf="produitForm.get('prixHT')?.errors?.['required']&& produitForm.get('prixHT')?.touched">Le prix HT est requis</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div>
+      <mat-form-field class="custom-input-width">
+        <mat-label>TVA</mat-label>
+        <input matInput formControlName="tva" placeholder="Entrer la TVA">
+        <mat-error *ngIf="produitForm.get('tva')?.errors?.['required']&& produitForm.get('tva')?.touched">La TVA est requise</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="custom-input-width">
+        <mat-label>Marque</mat-label>
+        <input matInput formControlName="marque" placeholder="Entrer la marque">
+        <mat-error *ngIf="produitForm.get('marque')?.errors?.['required']&& produitForm.get('marque')?.touched">La marque est requise</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field class="custom-input-width">
+          <mat-label>État</mat-label>
+          <input type="number" matInput formControlName="etat" placeholder="Entrer l'état">
+          <mat-error *ngIf="produitForm.get('etat')?.errors?.['required']&& produitForm.get('etat')?.touched">L'état est requis</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field class="custom-input-width">
+          <mat-label>Livraison Gratuite</mat-label>
+          <input type="number" matInput formControlName="livraisonGratuite" placeholder="Entrer la livraison gratuite">
+          <mat-error *ngIf="produitForm.get('livraisonGratuite')?.errors?.['required']&& produitForm.get('livraisonGratuite')?.touched">La livraison gratuite est requise</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!produitForm.valid">Update</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <!-- Additional action buttons if needed -->
+</div>
+</div>

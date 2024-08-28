@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #007bff;
+}
+
+.contact-page-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+  background-image: url(/assets/FrontOffice/img/error-bg1.png);
+  background-size:100%;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: left; /* Centers the image within the container */
+  background-color: #f8f9fa; /* Fallback background color */
+  border-radius: 8px;
+}
+
+
+.contact-form {
+  flex: 1 1 100%; /* Adjust the flex basis to give the contact form more width */
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  flex: 1 1 30%; /* Adjust the flex basis to reduce the width of the contact info */
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.contact-info h2 {
+  margin-bottom: 10px;
+  color: #c91515; /* Green color */
+}
+
+.contact-info p {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-item i {
+  color: #fa4668; /* Green color */
+  font-size: 1.5em;
+}
+
+
+
+
+
+.p-error {
+  color: #f44336; // Red color for error messages
+  font-size: 0.875em; // Slightly smaller font size for error messages
+}
+
+button[pButton] {
+  background-color: #007bff; // Example primary color for submit button
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  &:disabled {
+    background-color: #cccccc;
+  }
+}
+
+
+.image-preview {
+  margin-top: 10px;
+
+  max-width: 30%;
+  max-height: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .contact-info, .contact-form {
+    flex: 1 1 100%;
+  }
+}
+header {
+  min-width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #d00707;
+  color: white;
+  max-height: 120px;
+
+}
+
+header nav {
+  margin-top: 10px;
+
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+header  h1{
+  color: white;
+
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.custom-input-width {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.row {
+  display: flex;
+  gap: 16px; /* Adjust the space between the columns as needed */
+}
+
+.col {
+  flex: 1; /* Ensures that both columns take up equal space */
+}
+
+.custom-input-width {
+  width: 100%; /* Ensure input fields take up full width of their column */
+}
